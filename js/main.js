@@ -2,23 +2,28 @@ $(document).ready(function () {
     getLanguage();
     showLanguage();
     /* Smooth scroll */
-    /*     $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (e) {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-                && location.hostname == this.hostname) {
-                let target = $(this.hash);
-                target = target.length ? target : '[name=' + this.hash.slice(1) + ']';
-                console.log('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    console.log(target);
-                    e.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 400, 'swing', function () {
-                        window.location.hash = target;
-                    });
-                }
+    $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+            && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 400, 'swing', function () {
+                    var $target = $(target);
+                    $target.focus();
+                    if ($target.is(":focus")) {
+                        return false;
+                    } else {
+                        $target.attr('tabindex', '-1');
+                        $target.focus();
+                    };
+                });
             }
-        }); */
+        }
+    });
 
     $('#skills').hide();
     $('#CV').hide();
@@ -78,13 +83,18 @@ $(document).ready(function () {
     }
     function showLanguage() {
         const langFromLocal = getLanguage();
+        console.log(langFromLocal);
         if (langFromLocal === "sv") {
             $('[lang="sv"').show();
             $('[lang="en"').hide();
+            console.log("sv");
+
         } else if (langFromLocal === "en") {
             $('[lang="en"').show();
             $('[lang="sv"').hide();
+            console.log("en");
         }
+        console.log("showLanguage");
     }
     //Change language
     $('#swedishLang').click(function () {
