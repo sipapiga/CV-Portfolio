@@ -1,49 +1,552 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Document</title>
+    <link rel="shortcut icon" href="/images/profileBildEdit.png">
+    <title>Sipapat Prasopsap</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-theming.css" rel="stylesheet" type="text/css">
+    <link href="scss/style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
+    <nav class="navbar sticky-top navbar-expand-md ">
+        <a class="navbar-brand" href="#home"><img src="images/profileBildEdit.png" alt="user-img" class="img-fluid"></a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarsitems"
+            aria-controls="navbarsitems" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                            <form role="form" class="needs-validation" action="mail.php" novalidate method="POST">
-                                <div class="messages"></div>
-                                <div class="form-group">
-                                    <label for="name">Your name</label>
-                                    <input type="text" name="name" class="form-control" id="inputName"
-                                        aria-labelledby="CustomerName" placeholder="Enter name" required>
-                                    <span id="invalidName" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail1">Your email</label>
-                                    <input type="email" name="email" class="form-control" id="inputEmail"
-                                        aria-labelledby="CustomerEmail" placeholder="Enter email">
-                                    <span id="invalidEmail" class="text-danger"></span>
+        <div class="collapse navbar-collapse" id="navbarsitems">
+            <ul class="navbar-nav">
+                <li class="nav-item active homeNav">
+                    <a class="nav-link" href="#home" lang="en">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#home" lang="sv">Hem <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item cv">
+                    <a class="nav-link " href="#CV" lang="en">CV</a>
+                    <a class="nav-link " href="#CV" lang="sv">Resume</a>
+                </li>
+                <li class="nav-item skills">
+                    <a class="nav-link " href="#skills" lang="en">Skills</a>
+                    <a class="nav-link " href="#skills" lang="sv">Färdigheter</a>
+                </li>
+                <li class="nav-item portfolio">
+                    <a class="nav-link" href="#portfolio" lang="en">Portfolio</a>
+                    <a class="nav-link" href="#portfolio" lang="sv">Portfolio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">language</a>
+                    <div class="dropdown-menu nav-item" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" id="swedishLang" href="#"><img src="icons/swedish.png" width="30"
+                                class="switch-lang" alt="swedishLanguage"> SV</a>
+                        <a class="dropdown-item" id="englishLang" href="#"><img src="icons/english.png" width="30"
+                                class="switch-lang" alt="englishLanguage"> EN</a>
+                    </div>
+                </li>
+                <li>
+                    <a><img src="icons/swedish.png" width="50" class="switch-lang" lang="sv" alt="swedishLanguage"></a>
+                    <a><img src="icons/english.png" width="50" class="switch-lang" lang="en" alt="englishLanguage"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- container -->
+    <section id="home" class="bg-img">
+        <div class="overlay"></div>
+        <div class="landingText text-center">
+            <h1 class="mb-0">Sipapat
+                <span class="text-light">Prasopsap</span>
+            </h1>
+            <h3 lang="en">About me</h3>
+            <h3 lang="sv">Om mig</h3>
+            <p lang="en">I was born in Thailand but have lived in Sweden for 13 years. I have previously worked
+                in a restaurant, but after 10 years in the industry I felt that I wanted a new challenge. I have
+                always been interested in technology and found a suitable education so it felt like it was time to
+                change a career. In addition apart school and work, I have also had the opportunity to travel and meet
+                new people.</p>
+            <p lang="sv">Jag är född uppvuxen i Thailand men bosatt i Sverige sedan 13 år tillbaka. Jag har
+                tidigare jobbat inom restaurang men kände efter 10 år i branschen att jag ville ha en ny utmaning.
+                Jag har alltid varit intresserad av teknik och hittade en passande utbildning så det kände
+                att det var dags att bytta en karriär. Utöver skolan och jobb så har jag också hunnit med
+                att resa en del och träffat nya människor.</p>
+            <a href="#contact" class="btn btn-primary btn-lg contactmeBtn" data-toggle="modal"
+                data-target="#contactmeModal" lang="en" role="button">CONTACT ME</a>
+            <a href="#contact" class="btn btn-primary btn-lg contactmeBtn" data-toggle="modal"
+                data-target="#contactmeModal" lang="sv" role="button">KONTAKT MIG</a>
+            <a href="#CV" id="cvBtn" class="btn btn-primary btn-lg" role="button">CV</a>
+        </div>
+        <!-- Modal for contact me  -->
+        <!--  <div id='contactmeModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="custom-modal-title">Contact me</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="custom-modal-text text-left">
+                         **Försökte att använda php mail men det gick inte** -->
+        <!-- Just nu så har jag inget spara något värde i javascript men tänken på det här är att när jag deploy det skulle kunna skicka mail eller lägga värde till databasen -->
+        <!--  <form method="post" action="database.php">
+            <div class="form-group">
+                <label lang="en">Your name*</label>
+                <label lang="sv">Ditt namn*</label>
+                <input lang="en" type="text" name="name" class="form-control" aria-labelledby="CustomerName"
+                    placeholder="Enter name">
+                <input lang="sv" type="text" name="name" class="form-control" aria-labelledby="CustomerName"
+                    placeholder="Skriv ditt namn">
+            </div>
+            <div class="form-group">
+                <label lang="en">Your email*</label>
+                <label lang="sv">Din E-post adress*</label>
+                <input lang="en" type="email" name="email" class="form-control" aria-labelledby="CustomerEmail"
+                    placeholder="Enter email">
+                <input lang="sv" type="text" name="name" class="form-control" aria-labelledby="CustomerEmail"
+                    placeholder="Din E-post adress">
+            </div>
+            <div class="form-group">
+                <label lang="en">Your phone number*</label>
+                <label lang="sv">Ditt telefonnummer*</label>
+                <input lang="en" type="text" name="phone" class="form-control" aria-labelledby="CustomerNumber"
+                    placeholder="Enter telephone number">
+                <span class="text-danger"></span>
+                <input lang="sv" type="text" name="phone" class="form-control" aria-labelledby="CustomerNumber"
+                    placeholder="Ditt telefonnummer">
+                <span class="text-danger"></span>
 
-                                </div>
-                                <div class="form-group">
-                                    <label>Your phone number</label>
-                                    <input type="text" name="phone" class="form-control" id="inputTel"
-                                        aria-labelledby="CustomerNumber" placeholder="Enter telephone number">
-                                    <span id="invalidTel" class="text-danger"></span>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="details" class="form-label">Message</label>
-                                    <textarea rows="2" name="message" class="form-control" id="callDetails"
-                                        placeholder="Your message!"></textarea>
-                                </div>
-                            </form>
-                            <div class="modal-footer">
-                                <a type="submit" name="submit" class="btn btn-success waves-effect waves-light"
-                                    id="saveBtn" role="button">Send message</a>
+            </div>
+            <div class="form-group">
+                <label lang="en" class="form-label">Message*</label>
+                <textarea rows="2" name="message" class="form-control" lang="en" placeholder="Your message!"></textarea>
+                <label lang="sv" class="form-label">Ditt ärende*</label>
+                <textarea rows="2" name="message" class="form-control" lang="sv" placeholder="Ditt ärende!"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success waves-effect waves-light" id="saveBtn"
+                    data-dismiss="modal">Send message</button>
+            </div>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div> -->
+    </section>
+    <!-- Skills section med progress bar animate i css -->
+    <section id="skills">
+        <div class="container-fluid text-center ">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <h2 lang="en">My skills</h2>
+                    <h2 lang="sv">Mina Färdigheter</h2>
+                    <div class="col-md-12 text-left">
+                        <label>HTML5</label>
+                        <p lang="en">Level 9/10</p>
+                        <p lang="sv">Nivå 9/10</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                role="progressbar" aria-valuenow="90%" aria-valuemin="0" aria-valuemax="100"><span
+                                    class=" font-weight-bold">90%</span></div>
+                        </div>
+                        <label>Javascrip</label>
+                        <p lang="en">Level 8/10</p>
+                        <p lang="sv">Nivå 8/10</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+                                role="progressbar" aria-valuenow="80%" aria-valuemin="0" aria-valuemax="100"><span
+                                    class="font-weight-bold">80%</span></div>
+                        </div>
+                        <label>CSS</label>
+                        <p lang="en">Level 8/10</p>
+                        <p lang="sv">Nivå 8/10</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                                role="progressbar" aria-valuenow="80%" aria-valuemin="0" aria-valuemax="100"><span
+                                    class="font-weight-bold">80%</span></div>
+                        </div>
+                        <label>Java</label>
+                        <p lang="en">Level 6/10</p>
+                        <p lang="sv">Nivå 6/10</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+                                role="progressbar" aria-valuenow="60%" aria-valuemin="0" aria-valuemax="100"><span
+                                    class="bold font-weight-bold">60%</span>
                             </div>
-                       
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                        </div>
+                        <label>PHP</label>
+                        <p lang="en">Level 5/10</p>
+                        <p lang="sv">Nivå 5/10</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary "
+                                role="progressbar" aria-valuenow="50%" aria-valuemin="0" aria-valuemax="100"><span
+                                    class=" font-weight-bold">50%</span></div>
+                        </div>
+                        <label>Git</label>
+                        <p lang="en">Level 7/10</p>
+                        <p lang="sv">Nivå 7/10</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                                role="progressbar" aria-valuenow="70%" aria-valuemin="0" aria-valuemax="100"><span
+                                    class="font-weight-bold">70%</span></div>
+                        </div>
+                        <label>Database</label>
+                        <p lang="en">Level 7/10</p>
+                        <p lang="sv">Nivå 7/10</p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                role="progressbar" aria-valuenow="70%" aria-valuemin="0" aria-valuemax="100"><span
+                                    class=" font-weight-bold padding">70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Resume section -->
+    <section id="CV">
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2 lang="en">CV</h2>
+                    <h2 lang="sv">Resume</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center padding">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10 col-md-12 col-sm-12">
+                    <div class="row border ">
+                        <div class="col-md-12 col-lg-4">
+                            <img src="images/profileBild.jpg" alt="user-img" class="rounded-circle">
+                            <h4 lang="en" class="padding">CONTACT</h4>
+                            <h4 lang="sv" class="padding">KONTAKT</h4>
+                            <div class="row padding">
+                                <div class="col-lg-2 col-md-6 col-sm-6">
+                                    <p><i class="fas fa-map-marker-alt"></i></p>
+                                </div>
+                                <div class="col-lg-10 col-md-6 col-sm-6 text-left">
+                                    <p> Tångvägen 31 12642 Hägersten</p>
+                                </div>
+                            </div>
+                            <div class="row padding">
+                                <div class="col-lg-2 col-md-6 col-sm-6">
+                                    <p> <i class="fas fa-envelope"></i></p>
+                                </div>
+                                <div class="col-lg-10  col-md-6 col-sm-6 text-left">
+                                    <p><a href="mailto:sipapat.prasopsap@gmail.com"> sipapat.prasopsap@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="row padding">
+                                <div class="col-lg-2 col-md-6 col-sm-6">
+                                    <p> <i class="fas fa-mobile-alt"></i></p>
+                                </div>
+                                <div class="col-lg-10 col-md-6 col-sm-6 text-left">
+                                    <p> 0738-423135</p>
+                                </div>
+
+                            </div>
+                            <div class="divSpace"></div>
+                            <div class="divSpace"></div>
+                            <div class="divSpace"></div>
+                            <div class="divSpace"></div>
+                            <div class="text-center">
+                                <h4 lang="en" class="padding ">REFERENCES</h4>
+                                <p lang="en"> Available upon request</p>
+                                <h4 lang="sv" class="padding ">REFERENSER</h4>
+                                <p lang="sv"> Lämnas på begäran</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 text-left">
+                            <h1 class="mb-0">Sipapat
+                                <span class="text-primary">Prasopsap</span>
+                            </h1>
+                            <h4 lang="en" class="padding">Systemvetare and Future web developer</h4>
+                            <h4 lang="sv" class="padding">Systemvetare och blivande webbutvecklare</h4>
+                            <div class="title">
+                                <h4 lang="en" class="h4BG"><i class="fas fa-graduation-cap"></i> EDUCATION</h4>
+                            </div>
+                            <div class="title">
+                                <h4 lang="sv" class="h4BG"><i class="fas fa-graduation-cap"></i> UTBILDNING</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p lang="en" class="bold">2019-Ongoing</p>
+                                    <p lang="sv" class="bold">2019-Pågående</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en"> Web developer fullstack open source , Higher Vocational Education,
+                                        Nackademin, Stockholm</p>
+                                    <p lang="sv"> Webbutvecklare fullstack open source , Yrkehägskoleutbildning,
+                                        Nackademin, Stockholm</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p class="bold">2015-2018</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en">Bachelor Programme in Computer and Systems Sciences, University of
+                                        Stockholm, Sweden</p>
+                                    <p lang="sv">Data och systemvetenskapligt kandidatprogram. Stockholms universitet,
+                                        Sverige</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p class="bold">2003-2007</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en">Bachelor of science in microbiology ,Srinakarinwirot University,
+                                        Thailand</p>
+                                    <p lang="sv">Kandidatexamen med biologi inriktning mot mikrobiologi. Srinakarinwirot
+                                        Universitet, Thailand</p>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <h4 class="h4BG" lang="en"><i class="fas fa-briefcase"></i> WORK EXPERIENCE</h4>
+                                <h4 class="h4BG" lang="sv"><i class="fas fa-briefcase"></i>ARBETSLIVERFARENHET</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p lang="en" class="bold">2013-Present</p>
+                                    <p lang="sv" class="bold">2013-Pågående</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en" class="bold">Waitress</p>
+                                    <p lang="en">Waan Thai Restaurant, Stockholm, Sweden</p>
+                                    <p lang="sv" class="bold">Servitris</p>
+                                    <p lang="sv">Waan Thai Restaurant, Stockholm, Sweden</p>
+                                    <p lang="sv">Som servitris har jag arbetat med att ta emot beställningar och servera
+                                        mat och dryck. Jag har även varit ansvarig för personal och dryck-beställning
+                                        under en sommar. Jag har lärt mig bättre med språket och communikation både
+                                        intern och extern.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p class="bold">2011-2017</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en" class="bold">Breakfast Waitress</p>
+                                    <p lang="sv" class="bold">Frukostvärdinna</p>
+                                    <p>Berns hotel, Stockholm, Sweden</p>
+                                    <p lang="sv">I min roll som frukostvärdinna jobbade förberedde jag frukosten i
+                                        frukostbuffén. För mig var högsta prioritet att se till att gästarna var nöjda
+                                        Under tiden jag jobbade på Berns förbättrade jag främst min stresstålighet och
+                                        serviceförmåga.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <h4 class="h4BG" lang="en"><i class="fas fa-tools"></i> SKILLS</h4>
+                                <h4 class="h4BG" lang="sv"><i class="fas fa-tools"></i> FÄRDIGHETER</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p class="bold">Database:</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p>MySQL</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p lang="en" class="bold">Design and Modelling:</p>
+                                    <p lang="sv" class="bold">Design och Modelling:</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en">UML, Business Process Modeling(BPMN),Goal Modeling (BMM)</p>
+                                    <p lang="sv">Aktivitetsdiagram(UML), Processmodellering (BPMN), Målmodellering (BMM)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p lang="en" class="bold">Programming:</p>
+                                    <p lang="sv" class="bold">Programspråk:</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p>Java, Object-oriented Programming, Javascript, HTML, CSS, SASS, PHP, Git</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p lang="en" class="bold">Software Application:</p>
+                                    <p lang="sv" class="bold">Mjukvaruapplikationer:</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en">Office Software: MS Word, MS Excel, MS Powerpoint, Slack</p>
+                                    <p lang="sv">Office-programmen: MS Word, MS Excel, MS Powerpoint, Slack</p>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <h4 class="h4BG" lang="en"><i class="fab fa-speakap"></i> LANGUAGES</h4>
+                                <h4 class="h4BG" lang="sv"><i class="fab fa-speakap"></i> SPRÅKKUNSKAPER</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p lang="en" class="bold">Swedish:</p>
+                                    <p lang="sv" class="bold">Svenska:</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en">Good in speech and writing</p>
+                                    <p lang="sv">Goda kunskaper i tal och skrift</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p lang="en" class="bold">English:</p>
+                                    <p lang="sv" class="bold">Engelska:</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en">Good in speech and writing</p>
+                                    <p lang="sv">Goda kunskaper i tal och skrift</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p lang="en" class="bold">Thai:</p>
+                                    <p lang="sv" class="bold">Thailändska:</p>
+                                </div>
+                                <div class="col-md-9">
+                                    <p lang="en">Native</p>
+                                    <p lang="sv">Modersmål</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+        <!-- Portfolio section här visa jag vad jag har gjort på de senaste tiden -->
+    </section>
+    <section id="portfolio">
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2>Portfolio</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid padding">
+            <div class=" row portfolioContainer">
+                <div class="col-sm-12 col-md-6">
+                    <div class="card border-0 mb-3">
+                        <a href="https://sipapiga.github.io/QuizGame/" target="_blank">
+                            <div class="portfolio-box ">
+                                <div class="portfolio-img">
+                                    <img src="images/quiz.JPG" class="thumb-img" alt="portfolio-thumbnail">
+                                </div>
+                                <div class="portfolio-detail">
+                                    <h4 class="portfolio-title">Quiz</h4>
+                                    <p class="portfolio-text" lang="en"><span>Category: </span> School Project -
+                                        <i>Javascript
+                                            1</i></p>
+                                    <p class="portfolio-text" lang="sv"><span>Kategori: </span> Skolarbete -
+                                        <i>Javascript
+                                            1</i></p>
+                                    <p class="portfolio-text" lang="en"><span>Technique:</span> <i>Javascript, HTML5,
+                                            CSS,
+                                            Bootstrap</i></p>
+                                    <p class="portfolio-text" lang="sv"><span>Använda tekniker:</span> <i>Javascript,
+                                            HTML5,
+                                            CSS, Bootstrap, Git</i>
+                                    </p>
+                                    <p class="portfolio-text" lang="sv">Ett quiz-application där användaren kan
+                                        bestämma hur många fråga användaren vill besvara och en frågan kan har flera
+                                        svar dvs. att man ska kunna välja flera svar. Frågorna läsas in från en JSON-fil
+                                        och Quizet beseard på objektorienterad Javascript.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card border-0 mb-3">
+                        <a href="https://sipapiga.github.io/CRM/" target="_blank">
+                            <div class="portfolio-box">
+                                <div class="portfolio-img">
+                                    <img src="images/CRM.JPG" class="thumb-img" alt="portfolio-thumbnail">
+                                </div>
+                                <div class="portfolio-detail">
+                                    <h4 class="portfolio-title dark">CRM</h4>
+                                    <p class="portfolio-text" lang="en"><span>Category: </span> School Project -
+                                        <i>Javascript 2</i>
+                                    </p>
+                                    <p class="portfolio-text" lang="sv"><span>Kategori: </span> Skolarbete -
+                                        <i>Javascript
+                                            1</i></p>
+                                    <p class="portfolio-text" lang="en"><span>Technique:</span> <i>Javascript, HTML5,
+                                            CSS, SASS,
+                                            jQuery,
+                                            Bootstrap</i> </p>
+                                    <p class="portfolio-text" lang="sv"><span>Använda tekniker:</span> <i>Javascript,
+                                            HTML5,
+                                            CSS, Bootstrap</i>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of container -->
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid padding" id="contact">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <div class="row text-center">
+                    <div class="col-lg-4 col-md-6 col-xs-6 padding-top">
+                        <h2 lang="en" class="display-4">Contact me</h2>
+                        <h2 lang="sv" class="display-4">Kontakt mig</h2>
+                        <div class="footHover">
+                            <p><a href="mailto:sipapat.prasopsap@gmail.com"><i class="fas fa-mobile-alt"></i>
+                                    sipapat.prasopsap@gmail.com</a></p>
+                            <p><a href="tel:0738423135"><i class="fas fa-envelope"></i> 0738-423135</a></p>
+                            <p><a href="https://sv.wikipedia.org/wiki/Stockholm" target="_blank"><i
+                                        class="fas fa-map-marker-alt"></i> Stockholm</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-xs-6">
+                        <h2 class="display-4">Connect</h2>
+                        <div class="row padding-top">
+                            <div class="col-lg-4 col-md-4 col-xs-4 ">
+                                <a href="https://www.linkedin.com/in/sipapat-prasopsap-054442b3/" target="_blank"><img
+                                        src="icons/027-linkedin.png" alt="LinkedIn"></a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xs-4 ">
+                                <a href="https://www.facebook.com/sipapiga?ref=bookmarks" target="_blank"><img
+                                        src="icons/036-facebook.png" alt="facebook"></a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xs-4 ">
+                                <a href="https://github.com/sipapiga" target="_blank"><img src="icons/github-logo.png"
+                                        alt="github"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="images/profileBildEdit.png" alt="user-img" class="img-fluid">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

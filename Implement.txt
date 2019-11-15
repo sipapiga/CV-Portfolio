@@ -1,0 +1,76 @@
+Tillgänglighetskrav:   
+    1.1.1 Non-text Content
+    1.4.1 Use of Color
+    1.4.3 Contrast (Minimum)
+    1.4.4 Resize text
+    1.4.5 Images of Text
+    1.4.12 Text Spacing
+    3.2.1 On Focus
+
+G-krav
+    All CSS ska göras i SASS/LESS.
+	Checked Fonts,bootstrap-theming and style göras med scss
+
+    Göra någon DOM-manipulering i jQuery.
+	Checked 
+
+    Sidan ska använda Bootstrap.
+	Checked
+
+    Ni ska tematisera Bootstrap mha Scss.
+	Checked tematiserade färg och space i bootstrap-theming.scss
+
+    Sidan ska använda en valfri Bootstrap-komponent.
+	Checked Card, Navbar, Modal, Forms och Progress använder jag dem
+
+    Implementera minst 2 tillgänglighetskrav.
+	Checked:
+	1.4.12 Text Spacing 
+		Line height (line spacing) to at least 1.5 times the font size;
+   		Spacing following paragraphs to at least 2 times the font size;
+    		Letter spacing (tracking) to at least 0.12 times the font size;
+   		Word spacing to at least 0.16 times the font size.
+	* Genom att sätta font-size till 1.3em lika med 25.6px och sätta letter-spacing till 0.12em samt
+	word-spacing till 0.16em så det letter-spacing blir 1.92px och 2.56px. Line-height fått default värde från Bootstrap så det blir 24 px.  
+	
+	1.1.1 Non-text Content
+	Alla img tag så har jag alt text och input tag har jag också aria-labelledby.
+	
+	
+
+VG-krav
+
+    Ni ska göra en SPA (Single Page Application) (https://en.wikipedia.org/wiki/Single-page_application) med hjälp av jQuery.
+ 	Checked
+
+   Användaren ska kunna välja språk.
+	Checked
+
+    All kod (html, css, js) ska vara välskriven, korrekt indenterad och kommenterad.
+	Checked
+
+    Implementera minst 5 tillgänglighetskrav.
+	Checked:
+	1.4.12 Text Spacing 
+		Line height (line spacing) to at least 1.5 times the font size;
+   		Spacing following paragraphs to at least 2 times the font size;
+    		Letter spacing (tracking) to at least 0.12 times the font size;
+   		Word spacing to at least 0.16 times the font size.
+	* Genom att sätta font-size till 1em lika med 16px och sätta letter-spacing till 0.12em samt
+	word-spacing till 0.16em så det letter-spacing blir 1.92px och 2.56px. Line-height fått default värde från Bootstrap så det blir 24 px.  
+	
+	1.1.1 Non-text Content
+	Alla img tag så har jag alt text och input tag har jag också aria-labelledby.
+
+	1.4.1 Use of Color
+	Jag använde WCAG - Color contrast checker så har jag alla fick level AA 
+
+	1.4.3 Contrast (Minimum)
+	Jag använde jag https://webaim.org/ och har jag inte fått något error på contrast.
+
+	1.4.5 Images of Text
+	Alla img-tag fick alt-attribute
+
+   	3.2.1 On Focus
+	Input-tag och a-tag har jag sätt focus på dem.
+
