@@ -36,6 +36,13 @@ G-krav
 	1.1.1 Non-text Content
 	Alla img tag så har jag alt text och input tag har jag också aria-labelledby.
 	
+	1.4.1 Use of Color
+	Jag använde WCAG - Color contrast checker så har jag alla fick level AA förutom en h1- och p- tag på section home men då var det font-color är vit och background-color på bootstrap default är vitt 
+därmed det blev inte godkänd. Men det ser rätt ut med background picture och overlay. 
+
+	 1.4.5 Images of Text
+
+   	 3.2.1 On Focus
 	
 
 VG-krav
@@ -62,15 +69,4 @@ VG-krav
 	1.1.1 Non-text Content
 	Alla img tag så har jag alt text och input tag har jag också aria-labelledby.
 
-	1.4.1 Use of Color
-	Jag använde WCAG - Color contrast checker så har jag alla fick level AA 
-
-	1.4.3 Contrast (Minimum)
-	Jag använde jag https://webaim.org/ och har jag inte fått något error på contrast.
-
 	1.4.5 Images of Text
-	Alla img-tag fick alt-attribute
-
-   	3.2.1 On Focus
-	Input-tag och a-tag har jag sätt focus på dem.
-

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/images/profileBildEdit.png">
     <title>Sipapat Prasopsap</title>
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/bootstrap-theming.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="scss/style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -41,15 +41,17 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">language</a>
                     <div class="dropdown-menu nav-item" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" id="swedishLang" href="#"><img src="icons/swedish.png" width="30"
-                                class="switch-lang" alt="swedishLanguage"> SV</a>
-                        <a class="dropdown-item" id="englishLang" href="#"><img src="icons/english.png" width="30"
-                                class="switch-lang" alt="englishLanguage"> EN</a>
+                        <a class="dropdown-item" id="swedishLang" value="sv" href="#"><img src="icons/swedish.png"
+                                width="30px" class="switch-lang" alt="swedishLanguage"> SV</a>
+                        <a class="dropdown-item" id="englishLang" value="en" href="#"><img src="icons/english.png"
+                                width="30px" class="switch-lang" alt="englishLanguage"> EN</a>
                     </div>
                 </li>
                 <li>
-                    <a><img src="icons/swedish.png" width="50" class="switch-lang" lang="sv" alt="swedishLanguage"></a>
-                    <a><img src="icons/english.png" width="50" class="switch-lang" lang="en" alt="englishLanguage"></a>
+                    <a><img src="icons/swedish.png" width="50px" class="switch-lang" lang="sv"
+                            alt="swedishLanguage"></a>
+                    <a><img src="icons/english.png" width="50px" class="switch-lang" lang="en"
+                            alt="englishLanguage"></a>
                 </li>
             </ul>
         </div>
@@ -59,7 +61,7 @@
         <div class="overlay"></div>
         <div class="landingText text-center">
             <h1 class="mb-0">Sipapat
-                <span class="text-light">Prasopsap</span>
+                <span class="text-primary">Prasopsap</span>
             </h1>
             <h3 lang="en">About me</h3>
             <h3 lang="sv">Om mig</h3>
@@ -79,8 +81,8 @@
                 data-target="#contactmeModal" lang="sv" role="button">KONTAKT MIG</a>
             <a href="#CV" id="cvBtn" class="btn btn-primary btn-lg" role="button">CV</a>
         </div>
-        <!-- Modal for contact me  -->
-        <!--  <div id='contactmeModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!-- Modal -->
+        <div id='contactmeModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -88,54 +90,54 @@
                     </div>
                     <div class="modal-body">
                         <div class="custom-modal-text text-left">
-                         **Försökte att använda php mail men det gick inte** -->
-        <!-- Just nu så har jag inget spara något värde i javascript men tänken på det här är att när jag deploy det skulle kunna skicka mail eller lägga värde till databasen -->
-        <!--  <form method="post" action="database.php">
-            <div class="form-group">
-                <label lang="en">Your name*</label>
-                <label lang="sv">Ditt namn*</label>
-                <input lang="en" type="text" name="name" class="form-control" aria-labelledby="CustomerName"
-                    placeholder="Enter name">
-                <input lang="sv" type="text" name="name" class="form-control" aria-labelledby="CustomerName"
-                    placeholder="Skriv ditt namn">
-            </div>
-            <div class="form-group">
-                <label lang="en">Your email*</label>
-                <label lang="sv">Din E-post adress*</label>
-                <input lang="en" type="email" name="email" class="form-control" aria-labelledby="CustomerEmail"
-                    placeholder="Enter email">
-                <input lang="sv" type="text" name="name" class="form-control" aria-labelledby="CustomerEmail"
-                    placeholder="Din E-post adress">
-            </div>
-            <div class="form-group">
-                <label lang="en">Your phone number*</label>
-                <label lang="sv">Ditt telefonnummer*</label>
-                <input lang="en" type="text" name="phone" class="form-control" aria-labelledby="CustomerNumber"
-                    placeholder="Enter telephone number">
-                <span class="text-danger"></span>
-                <input lang="sv" type="text" name="phone" class="form-control" aria-labelledby="CustomerNumber"
-                    placeholder="Ditt telefonnummer">
-                <span class="text-danger"></span>
+                            <!-- **Försökte att använda php mail men det gick inte** -->
+                            <form method="post" action="database.php">
+                                <div class="form-group">
+                                    <label lang="en" for="name">Your name*</label>
+                                    <label lang="sv" for="name">Ditt namn*</label>
+                                    <input lang="en" type="text" name="name" class="form-control" id="inputName"
+                                        aria-labelledby="CustomerName" placeholder="Enter name">
+                                    <input lang="sv" type="text" name="name" class="form-control" id="inputName"
+                                        aria-labelledby="CustomerName" placeholder="Skriv ditt namn">
+                                </div>
+                                <div class="form-group">
+                                    <label lang="en" for="inputEmail1">Your email*</label>
+                                    <label lang="sv" for="name">Din E-post adress*</label>
+                                    <input lang="en" type="email" name="email" class="form-control" id="inputEmail"
+                                        aria-labelledby="CustomerEmail" placeholder="Enter email">
+                                    <input lang="sv" type="text" name="name" class="form-control" id="inputEmail"
+                                        aria-labelledby="CustomerEmail" placeholder="Din E-post adress">
+                                </div>
+                                <div class="form-group">
+                                    <label lang="en">Your phone number*</label>
+                                    <label lang="sv">Ditt telefonnummer*</label>
+                                    <input lang="en" type="text" name="phone" class="form-control" id="inputTel"
+                                        aria-labelledby="CustomerNumber" placeholder="Enter telephone number">
+                                    <span id="invalidTel" class="text-danger"></span>
+                                    <input lang="sv" type="text" name="phone" class="form-control" id="inputTel"
+                                        aria-labelledby="CustomerNumber" placeholder="Ditt telefonnummer">
+                                    <span id="invalidTel" class="text-danger"></span>
 
+                                </div>
+                                <div class="form-group">
+                                    <label lang="en" for="details" class="form-label">Message*</label>
+                                    <textarea rows="2" name="message" class="form-control" lang="en" id="callDetails"
+                                        placeholder="Your message!"></textarea>
+                                    <label lang="sv" for="details" class="form-label">Ditt ärende*</label>
+                                    <textarea rows="2" name="message" class="form-control" lang="sv" id="callDetails"
+                                        placeholder="Ditt ärende!"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light" id="saveBtn"
+                                        name="submit">Send message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label lang="en" class="form-label">Message*</label>
-                <textarea rows="2" name="message" class="form-control" lang="en" placeholder="Your message!"></textarea>
-                <label lang="sv" class="form-label">Ditt ärende*</label>
-                <textarea rows="2" name="message" class="form-control" lang="sv" placeholder="Ditt ärende!"></textarea>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-success waves-effect waves-light" id="saveBtn"
-                    data-dismiss="modal">Send message</button>
-            </div>
-        </form>
         </div>
-        </div>
-        </div>
-        </div>
-        </div> -->
     </section>
-    <!-- Skills section med progress bar animate i css -->
     <section id="skills">
         <div class="container-fluid text-center ">
             <div class="row">
@@ -181,7 +183,7 @@
                         <p lang="en">Level 5/10</p>
                         <p lang="sv">Nivå 5/10</p>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary "
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark "
                                 role="progressbar" aria-valuenow="50%" aria-valuemin="0" aria-valuemax="100"><span
                                     class=" font-weight-bold">50%</span></div>
                         </div>
@@ -189,7 +191,7 @@
                         <p lang="en">Level 7/10</p>
                         <p lang="sv">Nivå 7/10</p>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary"
                                 role="progressbar" aria-valuenow="70%" aria-valuemin="0" aria-valuemax="100"><span
                                     class="font-weight-bold">70%</span></div>
                         </div>
@@ -208,7 +210,7 @@
             </div>
         </div>
     </section>
-    <!-- Resume section -->
+
     <section id="CV">
         <div class="container-fluid padding">
             <div class="row text-center">
@@ -426,7 +428,7 @@
             </div>
             <div class="col-lg-1"></div>
         </div>
-        <!-- Portfolio section här visa jag vad jag har gjort på de senaste tiden -->
+        </div>
     </section>
     <section id="portfolio">
         <div class="container-fluid padding">
@@ -460,14 +462,16 @@
                                             HTML5,
                                             CSS, Bootstrap, Git</i>
                                     </p>
-                                    <p class="portfolio-text" lang="sv">Ett quiz-application där användaren kan
-                                        bestämma hur många fråga användaren vill besvara och en frågan kan har flera
-                                        svar dvs. att man ska kunna välja flera svar. Frågorna läsas in från en JSON-fil
-                                        och Quizet beseard på objektorienterad Javascript.
+                                    <p class="text">Ett quiz-application där användaren kan bestämma hur många fråga hen
+                                        vill besvara och en frågan kan har flera svar dvs. att man ska kunna välja flera
+                                        svar. Frågorna läsas in från en JSON-fil och Quizet beseard på objektorienterad
+                                        Javascript.
                                     </p>
                                 </div>
                             </div>
                         </a>
+
+
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
@@ -501,6 +505,8 @@
             </div>
         </div>
     </section>
+
+
     <!-- end of container -->
     <!-- Footer -->
     <footer>
@@ -543,8 +549,13 @@
             </div>
         </div>
     </footer>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="js/main.js"></script>
 </body>
