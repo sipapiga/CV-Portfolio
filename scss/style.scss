@@ -1,6 +1,5 @@
 
 @import url("fonts.css");
-@import url("../css/reponsive.css");
 $navbar:rgb(244, 245, 247);
 $font-color1:rgb(109, 24, 24);
 $overlay-color:rgb(143, 141, 141);
@@ -53,12 +52,12 @@ body {
 	height: 100vh;
 	padding: 0;
 	margin: 0;
-	font-size: 1.3em;
+	font-size: 1em;
 	letter-spacing: 0.12em;
 	word-spacing: 0.16em;
 	h1 {
-		font-size: 5rem;
-		line-height: 5.5rem;
+		font-size: 4rem;
+		line-height: 4.5rem;
 	}
 	h2 {
 		font-size: 3rem;
@@ -419,6 +418,32 @@ footer {
 	}
 }
 @media (max-width: 992px) {
+	.landingText{
+		top:50%;
+		left: 45%;
+	}
+	body{
+		h1 {
+			font-size: 3rem;
+			line-height: 5.5rem;
+		}
+	}
+	#CV {
+        img {
+            height: 250px;
+		}
+		h1{
+			font-size: 3.8rem;
+		}
+		h4{
+			font-size: 2.0rem;
+		}
+	}
+	.bold{
+		font-weight: bold;
+	}
+}
+@media (max-width: 1200px) {
 	.landingText{
 		top:50%;
 		left: 45%;
