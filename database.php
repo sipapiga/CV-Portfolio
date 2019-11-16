@@ -8,7 +8,7 @@ if(
     $insert_query = $link -> prepare("INSERT INTO Guestbook (User_id, time, Name, Email,Homepage,Comment) VALUES (NULL, CURRENT_TIMESTAMP, ?, ?, ?, ?)");
     $insert_query->bind_param('ssss', $name, $email,$homepage,$comment);
     $insert_query->execute();
-	header('location: index.html'); 
+	header('location: index.html?send'); 
 }
 
 function connectToDatabase(){ // DSV databas.
