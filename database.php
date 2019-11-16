@@ -1,7 +1,7 @@
 <?php
 $link = connectToDatabase();
 if(
-    ($name = checkInput($_POST['name']) and 
+    ($name = checkInput(@$_POST['name']) and 
     $email = checkInput($_POST['email']) and
     $homepage = checkInput($_POST['phone']) and
     $comment = checkInput($_POST['message'])) != ''){
