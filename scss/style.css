@@ -319,7 +319,7 @@ footer {
 }
 
 footer img {
-  height: 50px;
+  height: 40px;
 }
 
 footer a {
@@ -361,12 +361,6 @@ footer a img:hover {
     width: 90%;
     padding-top: 10px;
     padding-left: 10px;
-  }
-  .landingText p {
-    font-size: 18px;
-  }
-  .landingText h1 {
-    font-size: 22px;
   }
   .landingText h3 {
     font-size: 20px;

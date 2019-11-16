@@ -67,8 +67,6 @@ $(document).ready(function () {
     //Choose language
     $('.dropdown-menu').on('click', function (e) {
         let laugChoosed = e.target.textContent.toLowerCase().trim();
-        console.log(laugChoosed);
-        console.log(e.target.textContent);
         localStorage.setItem("Language", JSON.stringify(laugChoosed));
     })
     //Get language from localStorage
@@ -87,14 +85,11 @@ $(document).ready(function () {
         if (langFromLocal === "sv") {
             $('[lang="sv"').show();
             $('[lang="en"').hide();
-            console.log("sv");
 
         } else if (langFromLocal === "en") {
             $('[lang="en"').show();
             $('[lang="sv"').hide();
-            console.log("en");
         }
-        console.log("showLanguage");
     }
     //Change language
     $('#swedishLang').click(function () {
